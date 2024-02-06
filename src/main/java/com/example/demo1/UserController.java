@@ -31,7 +31,11 @@ public class UserController {
     @FXML
     protected TextField txtAge;
 
-    private ObservableList<Person> personas;
+    private ObservableList<Person> personas=FXCollections.observableArrayList();
+
+    public UserController() {
+        System.out.println(personas);
+    }
 
     @FXML
     protected void close() {
