@@ -78,6 +78,10 @@ public class UserController {
     public void btnAddPerson(ActionEvent actionEvent) {
         Person person=new Person(txtName.getText(),txtSurname.getText(),Integer.parseInt(txtAge.getText()));
         personas.addAll(person);
+        txtName.clear();
+        txtSurname.clear();
+        txtAge.clear();
+
         table.setItems(personas);
     }
 }
