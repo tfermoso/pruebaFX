@@ -60,6 +60,10 @@
                                 </columns>
                               </TableView>
                               <Button fx:id="btnDatos" layoutX="51.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnTraerDatos" text="Datos" />
+                              <TextField fx:id="txtName" layoutX="493.0" layoutY="34.0" promptText="Name" />
+                              <TextField fx:id="txtSurname" layoutX="494.0" layoutY="81.0" promptText="Surname" />
+                              <TextField fx:id="txtAge" layoutX="494.0" layoutY="129.0" promptText="Age" />
+                              <Button layoutX="494.0" layoutY="177.0" mnemonicParsing="false" onAction="#btnAddPerson" text="New Person" />
                            </children></AnchorPane>
                   </content>
                 </Tab>

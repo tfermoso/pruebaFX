@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="user view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/Person.java" afterDir="false" />
+    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="tableview person">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/user-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/user-view.fxml" afterDir="false" />
     </list>
@@ -94,13 +92,22 @@
       <option name="project" value="LOCAL" />
       <updated>1707233121502</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tableview person">
+      <option name="closed" value="true" />
+      <created>1707241935584</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707241935584</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba proyecto FX" />
     <MESSAGE value="login view" />
     <MESSAGE value="user view" />
-    <option name="LAST_COMMIT_MESSAGE" value="user view" />
+    <MESSAGE value="tableview person" />
+    <option name="LAST_COMMIT_MESSAGE" value="tableview person" />
   </component>
 </project>
