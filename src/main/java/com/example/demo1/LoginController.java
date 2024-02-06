@@ -28,7 +28,6 @@ public class LoginController {
             try {
                 Parent root=loader.load();
                 UserController userController =loader.getController();
-                userController.datos="Pepe";
                 Scene scene=new Scene(root);
                 Stage stage=new Stage();
                 stage.setTitle("Gestión Usuarios");
