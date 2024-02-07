@@ -81,7 +81,6 @@ public class UserController {
         txtName.clear();
         txtSurname.clear();
         txtAge.clear();
-
         table.setItems(personas);
     }
 }
