@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="borrar textField">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" afterDir="false" />
+    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="task view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707247175590</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="task view">
+      <option name="closed" value="true" />
+      <created>1707328254477</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707328254477</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -138,6 +143,7 @@
     <MESSAGE value="tableview person" />
     <MESSAGE value="add Person" />
     <MESSAGE value="borrar textField" />
-    <option name="LAST_COMMIT_MESSAGE" value="borrar textField" />
+    <MESSAGE value="task view" />
+    <option name="LAST_COMMIT_MESSAGE" value="task view" />
   </component>
 </project>

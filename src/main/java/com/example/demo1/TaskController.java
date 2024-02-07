@@ -5,9 +5,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -24,6 +24,13 @@ public class TaskController {
     protected TableColumn<Task, LocalDate> deadLineColumn;
     @FXML
     protected TableColumn<Task,Boolean> statusColumn;
+    @FXML
+    protected TextField txtTitle;
+    @FXML
+    protected TextArea txtDescription;
+    @FXML
+    protected DatePicker dpdeadLine;
+
 
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
 
@@ -38,6 +45,21 @@ public class TaskController {
     }
 
     public TaskController() {
+
+    }
+
+    public void btnAddTask(ActionEvent actionEvent) {
+        Task task=new Task();
+        task.setTitle(txtTitle.getText());
+        task.setDescription(txtDescription.getText());
+        task.setCreate_date(LocalDate.now());
+        task.setDeadline(dpdeadLine.getValue());
+        task.setStatus(false);
+        taskObservableList.addAll(task);
+        tableTask.setItems(taskObservableList);
+        txtTitle.clear();
+        txtDescription.clear();
+        dpdeadLine.setValue(null);
 
     }
 }
