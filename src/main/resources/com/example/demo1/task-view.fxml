@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="610.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.TaskController">
    <children>
-      <TableView fx:id="tableTask" layoutX="26.0" layoutY="119.0" prefHeight="446.0" prefWidth="432.0">
+      <TableView editable="true" fx:id="tableTask" layoutX="26.0" layoutY="119.0" prefHeight="446.0" prefWidth="432.0">
         <columns>
           <TableColumn fx:id="createDateColumn" prefWidth="105.60000991821289" text="CreateDate" />
           <TableColumn fx:id="titleColumn" prefWidth="130.3999786376953" text="Title" />
@@ -26,5 +26,6 @@
       <CheckBox fx:id="ckstatus" layoutX="500.0" layoutY="414.0" mnemonicParsing="false" text="Status" visible="false" />
       <Button fx:id="btnEdit" layoutX="500.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="26.0" prefWidth="102.0" text="Edit" visible="false" />
       <Button fx:id="btnCancel" layoutX="604.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnCancelTask" prefHeight="26.0" prefWidth="95.0" text="Cancel" visible="false" />
+      <Button fx:id="btnDelete" layoutX="502.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnDeleteTask" prefHeight="26.0" prefWidth="200.0" text="Delete" />
    </children>
 </AnchorPane>

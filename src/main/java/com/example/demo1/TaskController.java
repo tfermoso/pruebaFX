@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -9,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.CheckBoxTableCell;
+import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
@@ -40,6 +43,8 @@ public class TaskController {
     protected Button btnAdd;
     @FXML
     protected Button btnCancel;
+    @FXML
+    protected Button btnDelete;
 
 
     private ObservableList<Task> taskObservableList = FXCollections.observableArrayList();
@@ -49,7 +54,20 @@ public class TaskController {
         createDateColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
         deadLineColumn.setCellValueFactory(cell -> cell.getValue().getDeadline());
         titleColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getTitle()));
-        statusColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getStatus()));
+        statusColumn.setCellFactory(cell-> new CheckBoxTableCell<>());
+        statusColumn.setCellValueFactory(e->{
+            Task task=e.getValue();
+            SimpleBooleanProperty simpleBooleanProperty= new SimpleBooleanProperty(task.getStatus());
+            simpleBooleanProperty.addListener((event,old,newvalue)->{
+                task.setStatus(newvalue);
+            });
+            return simpleBooleanProperty;
+        });
+        statusColumn.setEditable(true);
+
+
+
+
         /*tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -60,6 +78,7 @@ public class TaskController {
             }
         });
          */
+
         tableTask.setOnMouseClicked(e -> {
             if (e.getClickCount() == 1) {
                 Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
@@ -73,6 +92,8 @@ public class TaskController {
                 btnAdd.setVisible(false);
             }
         });
+
+
     }
 
     public TaskController() {
@@ -117,5 +138,12 @@ public class TaskController {
         txtDescription.setText("");
         dpdeadLine.setValue(null);
         ckstatus.setVisible(false);
+    }
+
+    public void btnDeleteTask(ActionEvent actionEvent) {
+        Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
+        taskObservableList.remove(task);
+        tableTask.refresh();
+        btnCancelTask(null);
     }
 }
