@@ -38,6 +38,8 @@ public class TaskController {
     protected Button btnEdit;
     @FXML
     protected Button btnAdd;
+    @FXML
+    protected Button btnCancel;
 
 
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
@@ -64,8 +66,10 @@ public class TaskController {
                 txtTitle.setText(task.getTitle());
                 txtDescription.setText(task.getDescription());
                 dpdeadLine.setValue(task.deadLine());
+                ckstatus.setVisible(true);
                 ckstatus.setSelected(task.getStatus());
                 btnEdit.setVisible(true);
+                btnCancel.setVisible(true);
                 btnAdd.setVisible(false);
                 txtTitle.setDisable(true);
             }
@@ -103,5 +107,19 @@ public class TaskController {
                 }
             }
             tableTask.refresh();
+            //Dejar Formulario para crear tareas
+       btnCancelTask(null);
+    }
+
+    public void btnCancelTask(ActionEvent actionEvent) {
+        //Dejar Formulario para crear tareas
+        btnEdit.setVisible(false);
+        btnCancel.setVisible(false);
+        btnAdd.setVisible(true);
+        txtTitle.setDisable(false);
+        txtTitle.setText("");
+        txtDescription.setText("");
+        dpdeadLine.setValue(null);
+        ckstatus.setVisible(false);
     }
 }
