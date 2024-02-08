@@ -32,6 +32,12 @@ public class TaskController {
     protected TextArea txtDescription;
     @FXML
     protected DatePicker dpdeadLine;
+    @FXML
+    protected CheckBox ckstatus;
+    @FXML
+    protected Button btnEdit;
+    @FXML
+    protected Button btnAdd;
 
 
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
@@ -42,13 +48,26 @@ public class TaskController {
         deadLineColumn.setCellValueFactory(cell->cell.getValue().getDeadline());
         titleColumn.setCellValueFactory(cell->new SimpleStringProperty(cell.getValue().getTitle()));
         statusColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getStatus()));
-        tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        /*tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if(mouseEvent.getClickCount()==1){
                     Task task= (Task) tableTask.getSelectionModel().getSelectedItem();
                     System.out.println(task.getTitle());
                 }
+            }
+        });
+         */
+        tableTask.setOnMouseClicked(e->{
+            if(e.getClickCount()==1){
+                Task task= (Task) tableTask.getSelectionModel().getSelectedItem();
+                txtTitle.setText(task.getTitle());
+                txtDescription.setText(task.getDescription());
+                dpdeadLine.setValue(task.deadLine());
+                ckstatus.setSelected(task.getStatus());
+                btnEdit.setVisible(true);
+                btnAdd.setVisible(false);
+                txtTitle.setDisable(true);
             }
         });
     }
@@ -70,5 +89,19 @@ public class TaskController {
         txtDescription.clear();
         dpdeadLine.setValue(null);
 
+
+    }
+
+    public void btnEditTask(ActionEvent actionEvent) {
+            String title = txtTitle.getText();
+            for (Task task : taskObservableList){
+                if(task.getTitle().equals(title)){
+                    task.setDescription(txtDescription.getText());
+                    task.setStatus(ckstatus.isSelected());
+                    task.setDeadline(dpdeadLine.getValue());
+                    break;
+                }
+            }
+            tableTask.refresh();
     }
 }

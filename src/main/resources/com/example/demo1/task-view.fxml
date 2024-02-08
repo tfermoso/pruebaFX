@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -21,6 +22,8 @@
       <TextField fx:id="txtTitle" layoutX="500.0" layoutY="119.0" prefHeight="26.0" prefWidth="200.0" promptText="Title" />
       <TextArea fx:id="txtDescription" layoutX="500.0" layoutY="162.0" prefHeight="200.0" prefWidth="200.0" promptText="Descriptioin" />
       <DatePicker fx:id="dpdeadLine" layoutX="500.0" layoutY="379.0" prefHeight="26.0" prefWidth="200.0" promptText="DeadLine" />
-      <Button layoutX="500.0" layoutY="431.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="26.0" prefWidth="200.0" text="Add" />
+      <Button fx:id="btnAdd" layoutX="500.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="26.0" prefWidth="200.0" text="Add" />
+      <CheckBox fx:id="ckstatus" layoutX="500.0" layoutY="414.0" mnemonicParsing="false" text="Status" />
+      <Button fx:id="btnEdit" layoutX="500.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="26.0" prefWidth="200.0" text="Edit" visible="false" />
    </children>
 </AnchorPane>

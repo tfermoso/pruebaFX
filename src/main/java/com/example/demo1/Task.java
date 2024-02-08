@@ -51,6 +51,9 @@ public class Task {
     public SimpleObjectProperty getDeadline() {
         return new SimpleObjectProperty(deadline);
     }
+    public LocalDate deadLine(){
+        return deadline;
+    }
 
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
@@ -62,5 +65,16 @@ public class Task {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", create_date=" + create_date +
+                ", deadline=" + deadline +
+                ", status=" + status +
+                '}';
     }
 }
