@@ -21,11 +21,11 @@ public class TaskController {
     @FXML
     protected TableColumn<Task, LocalDate> createDateColumn;
     @FXML
-    protected TableColumn<Task,String> titleColumn;
+    protected TableColumn<Task, String> titleColumn;
     @FXML
     protected TableColumn<Task, LocalDate> deadLineColumn;
     @FXML
-    protected TableColumn<Task,Boolean> statusColumn;
+    protected TableColumn<Task, Boolean> statusColumn;
     @FXML
     protected TextField txtTitle;
     @FXML
@@ -42,14 +42,14 @@ public class TaskController {
     protected Button btnCancel;
 
 
-    private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
+    private ObservableList<Task> taskObservableList = FXCollections.observableArrayList();
 
     @FXML
-    public void initialize(){
-        createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
-        deadLineColumn.setCellValueFactory(cell->cell.getValue().getDeadline());
-        titleColumn.setCellValueFactory(cell->new SimpleStringProperty(cell.getValue().getTitle()));
-        statusColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getStatus()));
+    public void initialize() {
+        createDateColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
+        deadLineColumn.setCellValueFactory(cell -> cell.getValue().getDeadline());
+        titleColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getTitle()));
+        statusColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getStatus()));
         /*tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -60,9 +60,9 @@ public class TaskController {
             }
         });
          */
-        tableTask.setOnMouseClicked(e->{
-            if(e.getClickCount()==1){
-                Task task= (Task) tableTask.getSelectionModel().getSelectedItem();
+        tableTask.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 1) {
+                Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
                 txtTitle.setText(task.getTitle());
                 txtDescription.setText(task.getDescription());
                 dpdeadLine.setValue(task.deadLine());
@@ -71,7 +71,6 @@ public class TaskController {
                 btnEdit.setVisible(true);
                 btnCancel.setVisible(true);
                 btnAdd.setVisible(false);
-                txtTitle.setDisable(true);
             }
         });
     }
@@ -81,7 +80,7 @@ public class TaskController {
     }
 
     public void btnAddTask(ActionEvent actionEvent) {
-        Task task=new Task();
+        Task task = new Task();
         task.setTitle(txtTitle.getText());
         task.setDescription(txtDescription.getText());
         task.setCreate_date(LocalDate.now());
@@ -97,18 +96,15 @@ public class TaskController {
     }
 
     public void btnEditTask(ActionEvent actionEvent) {
-            String title = txtTitle.getText();
-            for (Task task : taskObservableList){
-                if(task.getTitle().equals(title)){
-                    task.setDescription(txtDescription.getText());
-                    task.setStatus(ckstatus.isSelected());
-                    task.setDeadline(dpdeadLine.getValue());
-                    break;
-                }
-            }
-            tableTask.refresh();
-            //Dejar Formulario para crear tareas
-       btnCancelTask(null);
+
+        Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
+        task.setTitle(txtTitle.getText());
+        task.setDescription(txtDescription.getText());
+        task.setStatus(ckstatus.isSelected());
+        task.setDeadline(dpdeadLine.getValue());
+        tableTask.refresh();
+        //Dejar Formulario para crear tareas
+        btnCancelTask(null);
     }
 
     public void btnCancelTask(ActionEvent actionEvent) {

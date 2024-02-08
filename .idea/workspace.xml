@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="edit task">
+    <list default="true" id="be19d300-e8d0-47fe-a23d-3566f9695917" name="Changes" comment="cancel task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707407824179</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="cancel task">
+      <option name="closed" value="true" />
+      <created>1707409899018</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707409899019</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,18 +178,10 @@
     <MESSAGE value="add task" />
     <MESSAGE value="select task" />
     <MESSAGE value="edit task" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit task" />
+    <MESSAGE value="cancel task" />
+    <option name="LAST_COMMIT_MESSAGE" value="cancel task" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="e.getClickCount()" language="JAVA" />
